@@ -43,8 +43,8 @@ TSYS01 temp_sensor;
 
 void setup() {
   // Initialize serial port and wait for it to open before continuing.
-   while(!Serial)
    Serial.begin(9600);
+  // while(!Serial)
    Serial.println("Starting");
    pinMode(LED_BUILTIN, OUTPUT);
    
@@ -73,7 +73,7 @@ void setup() {
   
   if (!pythonfs.begin()) {
     
- digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(1000);                       // wait for a second
   digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);  
@@ -89,7 +89,7 @@ temp_sensor.read();
 //pressure_sensor.read();
 
 float temp = temp_sensor.temperature(); //  Blue Robotics TSYS01 'Fast response' temp sensor
-
+Serial.println(temp);
 //float pressure = pressure_sensor.pressure();  // Blue Robotics MS5837 'Bar30' pressure sensor
 
 //float MS_temp = pressure_sensor.temperature();  // Blue Robotics MS5837 'Bar30'temperature
@@ -106,12 +106,17 @@ measuredvbat /= 1024; // convert to voltage
   // Create or append to a data.txt file and add a new line
   // to the end of it.  CircuitPython code can later open and
   // see this file too!
+  // Data is for the data file inside the microcontroller
+  // Opens the data.txt in the python file in flash memory 
+  // When it's done datalogging, you have to drag the file on the board
+  // Data file is only accessible when you drag a certain 
+  // file to the disk (like we had to with the .uf2 file)
   File data = pythonfs.open("data.txt", FILE_WRITE);
   if (data) {
     // Write a new line to the file:
     data.print(temp); //  Blue Robotics TSYS01 'Fast response' temp sensor
     //Serial.print(temp); //  Blue Robotics TSYS01 'Fast response' temp sensor
-    /*
+    /*  
     data.print(",");
     data.print(MS_temp);  // Blue Robotics MS5837 'Bar30' temperature
     // commenting out the pressure sensor related lines
