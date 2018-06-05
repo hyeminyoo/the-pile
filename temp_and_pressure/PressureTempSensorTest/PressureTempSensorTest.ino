@@ -112,6 +112,12 @@ void loop() {
     data.print(now.minute(), DEC);
     data.print(":");
     data.println(now.second(), DEC);
+
+    Serial.print(now.hour(), DEC);
+    Serial.print(":");
+    Serial.print(now.minute(), DEC);
+    Serial.print(":");
+    Serial.println(now.second(), DEC);
  
     Serial.println("End timestamp");
     Serial.println("Start actual data");
