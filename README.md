@@ -1,6 +1,6 @@
 # the-pile
-# Kyle Neumann
-# Minnie Yoo, Danny La
+ Kyle Neumann
+ Minnie Yoo, Danny La
 
 Project WaterBear
 
