@@ -1,7 +1,5 @@
-# the-pile
+# the-pile: Project WaterBear
  by: Kyle Neumann, Minnie Yoo, Danny La
-
-# Project WaterBear
 
 # implemented:
 - temperature sensor TSYS01
