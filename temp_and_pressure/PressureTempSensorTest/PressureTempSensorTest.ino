@@ -151,6 +151,6 @@ void loop() {
 
   Serial.println("Finished!");
 
-  delay(5000); // 5 seconds delay
+  delay(1000); // 1 seconds delay
 } // END LOOP
 
