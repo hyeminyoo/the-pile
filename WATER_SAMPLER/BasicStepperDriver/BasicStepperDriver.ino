@@ -12,8 +12,8 @@
 #include "BasicStepperDriver.h"
 
 // Motor steps per revolution. Most steppers are 200 steps or 1.8 degrees/step
-#define MOTOR_STEPS 200
-#define RPM 120
+#define MOTOR_STEPS 200 // was 200 initially
+#define RPM 120 // was 120 initially
 
 // Since microstepping is set externally, make sure this matches the selected mode
 // If it doesn't, the motor will move at a different RPM than chosen
@@ -24,35 +24,38 @@
 #define DIR 8
 #define STEP 9
 //Uncomment line to use enable/disable functionality
-//#define ENABLE 13
-
+#define ENABLE 13
+//#define i 10
 // 2-wire basic config, microstepping is hardwired on the driver
-BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP);
+//BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP);
 
 //Uncomment line to use enable/disable functionality
-//BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP, ENABLE);
+BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP, ENABLE);
 
 void setup() {
     stepper.begin(RPM, MICROSTEPS);
+    
 }
 
 void loop() {
-  
+   for (int i=10; i>0; i--) {
     // energize coils - the motor will hold position
-    // stepper.enable();
-  
+     stepper.enable();
     /*
      * Moving motor one full revolution using the degree notation
      */
     //stepper.rotate(360);
-
     /*
      * Moving motor to original position using steps
      */
-    stepper.move(-MOTOR_STEPS*MICROSTEPS);
-
+    //stepper.move(-MOTOR_STEPS*MICROSTEPS/20);
+    stepper.move(-80); // this is how much it moves at once
     // pause and allow the motor to be moved by hand
+     //stepper.stop();
+    
     // stepper.disable();
-
-    //delay(500);
+    delay(100);
+    } 
+    delay(5000);
+    stepper.disable();
 }
