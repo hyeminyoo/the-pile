@@ -7,7 +7,7 @@
 - real time clock RTC_DS3231
 
 
-# How to access datalogging file:
+# How to access datalogging file for Featherboot:
 1. Implemented code is in PressureTempSensorTest.ino under temp_and_pressure folder
 2. Upload the file while connected to featherboot_m0_express board
 3. Check serial monitor (115200 serial baud) to see if the data has been logged onto CIRCUITPY
