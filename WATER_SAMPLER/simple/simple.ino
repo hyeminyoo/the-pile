@@ -3,7 +3,7 @@
 // In order to run for:
 // 	12 hours: delay(774);
 // 	24 hours: delay(1547);
-// pin 8: Direction (Low is in, High is out)
+// pin 8: Direction relative to the front of motor (Low is counter-clockwise, High is clockwise)
 // pin 9: Step (Low is don't step, High is step)
 
 void setup() {
