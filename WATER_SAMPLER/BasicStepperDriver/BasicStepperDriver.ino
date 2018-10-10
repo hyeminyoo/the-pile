@@ -34,7 +34,11 @@ BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP, ENABLE);
 
 void setup() {
     stepper.begin(RPM, MICROSTEPS);
-    
+    for (int i=10; i>0; i--) {
+      stepper.enable();
+      stepper.move(-80);
+      delay(100);
+    }
 }
 
 void loop() {
