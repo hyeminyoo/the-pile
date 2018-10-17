@@ -3,7 +3,11 @@
 // In order to run for:
 // 	12 hours: delay(774);
 // 	24 hours: delay(1547);
+<<<<<<< HEAD
 // pin 10: Direction (Low is in, High is out)
+=======
+// pin 8: Direction relative to the front of motor (Low is counter-clockwise, High is clockwise)
+>>>>>>> 5aecd1a6f4e0344feec888cbdaa89c841664f054
 // pin 9: Step (Low is don't step, High is step)
 // ----------------------------------------------------------
 // TRQ	TR1 	current
