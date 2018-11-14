@@ -15,3 +15,13 @@
 5. Find adafruit-circuitpython-feather_m0_express-2.3.1.uf2 file (also in this repo) and drag the file into the FEATHERBOOT disk
 6. Then, a new device called CIRCUITPY (or it could be called NO NAME like my mac LOL) is going to appear after FEATHERBOOT disappears
 7. click on the “datalog.txt” file and scroll all the way down to find the recent data!
+
+# the-pile: Project WaterSampler
+  by: Kyle Neumann, Minnie Yoo, Danny La
+  
+#description:
+- water sampler that works for 24 hours
+
+#implemented:
+- LED
+- current ramping
