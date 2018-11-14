@@ -3,11 +3,10 @@
 
 ## Project WaterBear
 ### source code:
-```
+
 PressureTempSensorTest.ino 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-[link text itself]: http://www.reddit.com
-```
+[PressureTempSensorTest.ino](https://github.com/hyeminyoo/the-pile/blob/master/temp_and_pressure/PressureTempSensorTest/PressureTempSensorTest.ino)
+
 
 ### implemented:
 ```
@@ -28,9 +27,8 @@ PressureTempSensorTest.ino
 ## Project WaterSampler
   
 ### source code:
-```
-simple.ino
-```
+[simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
+
 ### description:
 - water sampler that works for 24 hours
 - Current is HIGH 100% until the step, and once it steps, it turns LOW 50%, and it goes back to HIGH and repeats
