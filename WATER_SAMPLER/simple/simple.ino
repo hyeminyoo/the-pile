@@ -3,11 +3,8 @@
 // In order to run for:
 // 	12 hours: delay(774);
 // 	24 hours: delay(1547);
-<<<<<<< HEAD
-// pin 10: Direction (Low is in, High is out)
-=======
-// pin 8: Direction relative to the front of motor (Low is counter-clockwise, High is clockwise)
->>>>>>> 5aecd1a6f4e0344feec888cbdaa89c841664f054
+// pin 5: Direction (Low is in, High is out)
+// 	- Direction relative to the front of motor (Low is counter-clockwise, High is clockwise)
 // pin 9: Step (Low is don't step, High is step)
 // ----------------------------------------------------------
 // TRQ	TR1 	current
@@ -16,6 +13,8 @@
 // High	Low	75%
 // Low	Low	100%
 // ----------------------------------------------------------
+// pin 6: TRQ
+// pin 12: TR1
 // Adalogger pin #8 green LED
 // Adalogger pin #13 red LED
 
@@ -37,7 +36,8 @@ void error(uint8_t errno) {
 
 void setup() {
 
-int init_delay = 1800000; // 1800000 milliseconds = 30 minutes
+//int init_delay = 1800000; // 1800000 milliseconds = 30 minutes
+int init_delay = 1000;
 int i;
 pinMode(8, OUTPUT);
 digitalWrite(8, HIGH);
@@ -49,23 +49,45 @@ for (i=0; i<init_delay/1000; i++) {
   delay(500);
 }
 
-digitalWrite(10, LOW);
-//digitalWrite(10, HIGH);
+digitalWrite(5, LOW);
+//digitalWrite(5, HIGH);
 
 for (i=0; i<30000; i++) {
+  // make current 100%
+  digitalWrite(6, LOW);
+  digitalWrite(12, LOW);
+  // step once
   digitalWrite(9, HIGH);
   delay(1);
+  // make current 25%
+  digitalWrite(6, HIGH);
+  digitalWrite(12, HIGH);
+  // delay
   digitalWrite(9,LOW);
   delay(774);
+  digitalWrite(8, HIGH);
+  delay(500);
+  digitalWrite(8, LOW);
 }
 
 // Second for loop is because ~ 36000 iterations maxes out the arduino's memory
 
 for (i=0; i<26000; i++) {
+  // make current 100%
+  digitalWrite(6, LOW);
+  digitalWrite(12, LOW);
+  // step once
   digitalWrite(9, HIGH);
   delay(1);
+  // make current 25%
+  digitalWrite(6, HIGH);
+  digitalWrite(12, HIGH);
+  // delay
   digitalWrite(9,LOW);
   delay(774);
+  digitalWrite(8, HIGH);
+  delay(500);
+  digitalWrite(8, LOW);
 
 }
 
