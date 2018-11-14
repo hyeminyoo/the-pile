@@ -1,14 +1,14 @@
 # the-pile: Project WaterBear and Project WaterSampler
  by: Kyle Neumann, Minnie Yoo, Danny La
 
-# Project WaterBear
+## Project WaterBear
 
-# implemented:
+### implemented:
 - temperature sensor TSYS01
 - pressure sensor MS5837
 - real time clock RTC_DS3231
 
-# How to access datalogging file for Featherboot:
+### How to access datalogging file for Featherboot:
 1. Implemented code is in PressureTempSensorTest.ino under temp_and_pressure folder
 2. Upload the file while connected to featherboot_m0_express board
 3. Check serial monitor (115200 serial baud) to see if the data has been logged onto CIRCUITPY
@@ -18,12 +18,11 @@
 7. click on the “datalog.txt” file and scroll all the way down to find the recent data!
 
 
-# Project WaterSampler
-  by: Kyle Neumann, Minnie Yoo, Danny La
+## Project WaterSampler
   
-# description:
+### description:
 - water sampler that works for 24 hours
 
-# implemented:
+### implemented:
 - LED
 - current ramping
