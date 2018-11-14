@@ -3,7 +3,7 @@
 
 ## Project WaterBear
 ### source code:
-[PressureTempSensorTest.ino](https://github.com/hyeminyoo/the-pile/blob/master/temp_and_pressure/PressureTempSensorTest/PressureTempSensorTest.ino)
+- [PressureTempSensorTest.ino](https://github.com/hyeminyoo/the-pile/blob/master/temp_and_pressure/PressureTempSensorTest/PressureTempSensorTest.ino)
 
 
 ### implemented:
@@ -25,7 +25,7 @@
 ## Project WaterSampler
   
 ### source code:
-[simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
+- [simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
 
 ### description:
 - water sampler that works for 24 hours
