@@ -31,6 +31,7 @@ simple.ino
 ```
 ### description:
 - water sampler that works for 24 hours
+- Current is HIGH 100% until the step, and once it steps, it turns LOW 50%, and it goes back to HIGH and repeats
 
 ### implemented:
 ```
