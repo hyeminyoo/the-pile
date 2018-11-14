@@ -2,6 +2,10 @@
  by: Kyle Neumann, Minnie Yoo, Danny La
 
 ## Project WaterBear
+### source code:
+```
+PressureTempSensorTest.ino
+```
 
 ### implemented:
 - temperature sensor TSYS01
@@ -21,9 +25,9 @@
 ## Project WaterSampler
   
 ### source code:
-'''
+```
 simple.ino
-'''
+```
 ### description:
 - water sampler that works for 24 hours
 
