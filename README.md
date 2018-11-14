@@ -3,8 +3,6 @@
 
 ## Project WaterBear
 ### source code:
-
-PressureTempSensorTest.ino 
 [PressureTempSensorTest.ino](https://github.com/hyeminyoo/the-pile/blob/master/temp_and_pressure/PressureTempSensorTest/PressureTempSensorTest.ino)
 
 
