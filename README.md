@@ -6,6 +6,7 @@
 ```
 PressureTempSensorTest.ino 
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+[link text itself]: http://www.reddit.com
 ```
 
 ### implemented:
