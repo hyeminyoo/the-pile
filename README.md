@@ -4,7 +4,8 @@
 ## Project WaterBear
 ### source code:
 ```
-PressureTempSensorTest.ino
+PressureTempSensorTest.ino 
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 ```
 
 ### implemented:
