@@ -8,11 +8,11 @@
 // 2. incorporate LED and look into that
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
-// Steppermotor that runs for 12 hours
-// delay(1+774)=delay(775) milliseconds * 56000 iterations = 12 hours
+// Steppermotor that runs for however many hours
+// delay(1+770)=delay(771) milliseconds * 56000 iterations = 12 hours
 // In order to run for:
-// 	12 hours: delay(774);
-// 	24 hours: delay(1547);
+// 	12 hours: delay(771) per iteration;
+// 	24 hours: delay(1542) per iteration;
 // pin 5: Direction (Low is in, High is out)
 // 	- Direction relative to the front of motor (Low is counter-clockwise, High is clockwise)
 // pin 9: Step (Low is don't step, High is step)
@@ -29,6 +29,8 @@
 // Adalogger pin #13 red LED
 
 // blink out an error code with red LED
+//
+// VERSION 4 (no LED+OLED)
 void error(uint8_t errno) {
   while(1) {
     uint8_t i;
@@ -46,16 +48,11 @@ void error(uint8_t errno) {
 
 void setup() {
 
-//int init_delay = 1800000; // 1800000 milliseconds = 30 minutes
-int init_delay = 1000;
+int init_delay = 1800000; // 1800000 milliseconds = 30 minutes
 int i;
-pinMode(8, OUTPUT);
-digitalWrite(8, HIGH);
 
 for (i=0; i<init_delay/1000; i++) {
-  digitalWrite(8, HIGH);
   delay(500);
-  digitalWrite(8,LOW);
   delay(500);
 }
 
@@ -74,10 +71,7 @@ for (i=0; i<30000; i++) {
   digitalWrite(6, HIGH);
   digitalWrite(12, HIGH);
   // delay
-  delay(774);
-  digitalWrite(8, HIGH);
-  delay(500);
-  digitalWrite(8, LOW);
+  delay(770);
 }
 
 // Second for loop is because ~ 36000 iterations maxes out the arduino's memory
@@ -95,9 +89,6 @@ for (i=0; i<26000; i++) {
   // delay
   digitalWrite(9,LOW);
   delay(774);
-  digitalWrite(8, HIGH);
-  delay(500);
-  digitalWrite(8, LOW);
 
 }
 
