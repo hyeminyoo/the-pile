@@ -1,3 +1,4 @@
+// THIS IS SUCCESSFUL VERSION1 OF OLED USER INTERFACE
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -45,15 +46,22 @@ void setup() {
   delay(2000);
   display.clearDisplay();
  
-  display.print("Enter Input: ");
+  display.println("Enter Input: ");
+  display.println("Press A for hours");
+  display.println("Press B for minutes");
+  display.print("Press C if finished");
+  display.setTextSize(1);
   display.display();
- 
+  
 }
 
 
 //int whichbutton = 0;
  
 void loop() {
+  if ((buttonPushCounterA == 0) && (buttonPushCounterB == 0) && (buttonPushCounterC == 0)) {
+    display.clearDisplay();
+  }
   // read the pushbutton input pin:
   buttonStateA = digitalRead(buttonA);
   buttonStateB = digitalRead(buttonB);
@@ -64,13 +72,24 @@ void loop() {
     // if the state has changed, increment the counter
     if (buttonStateA == LOW) {
       // if the current state is LOW then the button was pressed
+      // delete line by drawing black pixels over it
+      for (int a=0; a <127; a++) {
+        for (int b=0; b<=6; b++) {
+          display.drawPixel(a,b,BLACK);
+        }
+      }
+      Serial.println("black");
+      //display.print(buttonPushCounterA);
+      //display.print(" hours");
+      // done deleting
       buttonPushCounterA++;
-      Serial.print("A button: ");
-      Serial.println(buttonPushCounterA);
-      
-      display.clearDisplay();
-      display.print("A button: ");
-      display.println(buttonPushCounterA);
+      Serial.print(buttonPushCounterA);
+      Serial.println(" hours");
+      display.setTextColor(WHITE); // set it back to white to write
+      display.setCursor(0,0);
+      //display.clearDisplay();
+      display.print(buttonPushCounterA);
+      display.print(" hours");
       display.display();
       
       
@@ -79,13 +98,24 @@ void loop() {
 
   if (buttonStateB != lastButtonStateB) {
     if (buttonStateB == LOW) {
+      // delete line by drawing black pixel over it
+      for (int c=0; c <127; c++) {
+        for (int d=0; d<=10; d++) {
+          display.drawPixel(c,(d+7),BLACK);
+        }
+      }
+      Serial.println("black");
+      //display.print(buttonPushCounterA);
+      //display.print(" hours");
+      // done deleting
       buttonPushCounterB++;
-      Serial.print("B button: ");
-      Serial.println(buttonPushCounterB);
-      
-      display.clearDisplay();
-      display.print("B button: ");
-      display.println(buttonPushCounterB);
+      Serial.print(buttonPushCounterB);
+      Serial.println(" minutes");
+      display.setTextColor(WHITE); // set text back to white to write
+      display.setCursor(0,10);
+      //display.clearDisplay();
+      display.print(buttonPushCounterB);
+      display.print(" minutes");
       display.display();
       
     }
@@ -96,8 +126,8 @@ void loop() {
       buttonPushCounterC++;
       Serial.print("C button: ");
       Serial.println(buttonPushCounterC);
-      
-      display.clearDisplay();
+      display.setCursor(0,0);
+      //display.clearDisplay();
       display.print("C button: ");
       display.println(buttonPushCounterC);
       display.display();
@@ -110,6 +140,6 @@ void loop() {
   lastButtonStateA = buttonStateA;
   lastButtonStateB = buttonStateB;
   lastButtonStateC = buttonStateC;
-
+  
 }
 
