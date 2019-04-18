@@ -48,17 +48,20 @@ void setup() {
 
 //int init_delay = 1800000; // 1800000 milliseconds = 30 minutes
 int init_delay = 1000;
-int i;
-pinMode(8, OUTPUT);
-digitalWrite(8, HIGH);
+int i=0;
+//pinMode(8, OUTPUT);
+//digitalWrite(8, HIGH);
 
+digitalWrite(15, LOW);
+digitalWrite(19, LOW);
+/*
 for (i=0; i<init_delay/1000; i++) {
   digitalWrite(8, HIGH);
   delay(500);
   digitalWrite(8,LOW);
   delay(500);
 }
-
+*/
 digitalWrite(5, LOW);
 //digitalWrite(5, HIGH);
 
@@ -74,10 +77,10 @@ for (i=0; i<30000; i++) {
   digitalWrite(6, HIGH);
   digitalWrite(12, HIGH);
   // delay
-  delay(774);
-  digitalWrite(8, HIGH);
-  delay(500);
-  digitalWrite(8, LOW);
+  delay(100);
+  //digitalWrite(8, HIGH);
+  //delay(500);
+  //digitalWrite(8, LOW);
 }
 
 // Second for loop is because ~ 36000 iterations maxes out the arduino's memory
@@ -95,9 +98,9 @@ for (i=0; i<26000; i++) {
   // delay
   digitalWrite(9,LOW);
   delay(774);
-  digitalWrite(8, HIGH);
-  delay(500);
-  digitalWrite(8, LOW);
+  //digitalWrite(8, HIGH);
+  //delay(500);
+  //digitalWrite(8, LOW);
 
 }
 
