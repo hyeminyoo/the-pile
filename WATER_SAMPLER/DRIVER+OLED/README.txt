@@ -1,4 +1,5 @@
-// driveroled.ino is the latest version
+// driveroled_update.ino is the latest version
+// and then working with driveroled_fault.ino to add fault feature
 // Steppermotor that runs for 12 hours
 // delay(1+774)=delay(775) milliseconds * 56000 iterations = 12 hours
 // In order to run for:
@@ -28,17 +29,20 @@
 // Adalogger pin #13 red LED (could use Neopixel)
 //////////////////////////////////////////////////////////////
 // pinouts:
-// pin 5: direction pin
-// pin 6: TRQ
+// pin 15: direction pin
+// pin 18: TRQ
 // pin 8: green LED pin
-// pin 9: step pin
-// pin 12: TR1
+// pin 16: step pin
+// pin 19: TR1
 // pin 13: red LED pin
-// pin 15: M1
-// pin 16: buttonA
-// pin 17: buttonB
-// pin 18: buttonC
-// pin 19: M0
+// pin 23: M1
+// pin 9: buttonA
+// pin 6: buttonB
+// pin 5: buttonC
+// pin 22: M0
 // pin 20: SDA
 // pin 21: SCL
+// pin 14: FLT
+// pin 17: SLP
+// pin 24: EN
 /////////////////////////////////////////////////////////////
