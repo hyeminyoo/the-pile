@@ -1,5 +1,5 @@
-// driveroled_update.ino is the latest version
-// and then working with driveroled_fault.ino to add fault feature
+// driveroled_fault.ino is the latest version
+// driveroled_update.ino + fault feature = driveroled_fault.ino
 // Steppermotor that runs for 12 hours
 // delay(1+774)=delay(775) milliseconds * 56000 iterations = 12 hours
 // In order to run for:
