@@ -26,11 +26,11 @@
   
 ### source code:
 - StepperMotor + OLED:
-  -[driveroled_fault.ino] (https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/DRIVER%2BOLED/driveroled_fault/driveroled_fault.ino)
+  -[driveroled_fault.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/DRIVER%2BOLED/driveroled_fault/driveroled_fault.ino)
 - StepperMotor:
   -[simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
 - OLED:
-  -[oledworks3.ino] (https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/finalOLED/oledworks3/oledworks3.ino)
+  -[oledworks3.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/finalOLED/oledworks3/oledworks3.ino)
 
 ### description:
 - water sampler that delays and works for however long the user wants
