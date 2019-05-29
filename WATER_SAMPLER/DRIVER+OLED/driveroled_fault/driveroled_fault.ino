@@ -58,6 +58,7 @@ int countB = 0;
 int countC = 0;
 int firstA = 0; // countA will be stored in here so countA can be used again
 int firstB = 0; // countB will be stored in here so countB can be used again
+int loopCount = 0; // count how many iterations during the loop
 
 int buttonStateA = 0;
 int buttonStateB = 0;
@@ -65,6 +66,23 @@ int buttonStateC = 0;
 int lastButtonStateA = 0;
 int lastButtonStateB = 0;
 int lastButtonStateC = 0;
+
+// blink out an error code with red LED
+void error(uint8_t errno) {
+  while(1) {
+    uint8_t i;
+    for (i=0; i<errno; i++) {
+      digitalWrite(13, HIGH);
+      delay(100);
+      digitalWrite(13, LOW);
+      delay(100);
+    }
+    for (i=errno; i<10; i++) {
+      delay(200);
+    }
+  }
+}
+
 
 void printTime(int hr, int mins) {
   if (hr >= 0) { // can't be 0 because it passes 0 if there is none for now
@@ -85,19 +103,13 @@ void printTime(int hr, int mins) {
   }
 }
 
-// blink out an error code with red LED
-void error(uint8_t errno) {
-  while(1) {
-    uint8_t i;
-    for (i=0; i<errno; i++) {
-      digitalWrite(13, HIGH);
-      delay(100);
-      digitalWrite(13, LOW);
-      delay(100);
-    }
-    for (i=errno; i<10; i++) {
-      delay(200);
-    }
+void homing(int steps) {
+  // go back however many steps it has taken so far
+  digitalWrite(15, HIGH); // opposite direction
+  for (int i=0; i<steps; i++) {
+    digitalWrite(16, HIGH);
+    delay(10);
+    digitalWrite(16, LOW);
   }
 }
 
@@ -284,6 +296,9 @@ void loop() {
         //digitalWrite(5, LOW);
         //digitalWrite(5, HIGH);
         Serial.println("delay over");
+        Serial.println(buttonStateC);
+       // buttonStateC = HIGH;
+       // Serial.println(buttonStateC);
 
         // delay should change 
         // duration of the motor
@@ -309,10 +324,35 @@ void loop() {
           digitalWrite(19, HIGH);
           // delay
           delay(delayi);
-        }
+          loopCount++;
+          //Serial.print(buttonStateC); // 1
+          Serial.print(digitalRead(buttonC)); // 1
+          if (loopCount > 20) {
+         // if (digitalRead(buttonC) != buttonStateC) {
+            if (digitalRead(buttonC) == LOW) {
+              Serial.println(digitalRead(buttonC));
+              break;
+            }
+         // }
+          }
 
+          
+        } // loop done
+
+        // next menu
+        display.clearDisplay();
+        display.setCursor(0,0);
+        display.println("Home?");
+        display.print("Press C");
+        display.display();
+        
       } // end of countC == 2
 
+      if (countC == 3) {
+        Serial.print(loopCount);
+        homing(loopCount);
+      }
+      
       countC++;
       
     }
