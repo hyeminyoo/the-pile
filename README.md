@@ -25,14 +25,25 @@
 ## Project WaterSampler
   
 ### source code:
-- [simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
+- StepperMotor + OLED:
+  -[driveroled_fault.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/DRIVER%2BOLED/driveroled_fault/driveroled_fault.ino)
+- StepperMotor:
+  -[simple.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/simple/simple.ino)
+- OLED:
+  -[oledworks3.ino](https://github.com/hyeminyoo/the-pile/blob/master/WATER_SAMPLER/finalOLED/oledworks3/oledworks3.ino)
 
 ### description:
-- water sampler that works for 24 hours
+- water sampler that delays and works for however long the user wants
 - Current is HIGH 100% until the step, and once it steps, it turns LOW 50%, and it goes back to HIGH and repeats
+- full step
+- Goes to sleep when there is fault with the board
 
 ### implemented:
 ```
+- OLED (UI)
 - LED
 - current ramping
+- sleep
+- fault
+- size of step
 ```
